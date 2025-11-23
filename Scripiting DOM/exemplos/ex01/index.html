@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exemplo01</title>
+    <style>
+        #square{
+            width: 20em;
+            height: 20em;
+            border: 2px inset gray;
+            margin-bottom: 1em;
+        }
+
+        button{
+            padding: 0.5em 2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript sample</h1>
+
+    <div id="square"></div>
+
+    <button type="button" onclick="doDemo(this);">Click Me</button>
+    <script>
+        function doDemo (button){
+            var square = document.querySelector("#square");
+            square.style.backgroundColor = "#fa4";
+            button.setAttribute("")
+        }
+    </script>
+</body>
+</html>
