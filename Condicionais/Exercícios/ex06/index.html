@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06</title>
+</head>
+<body>
+    <h1>Verificador período do dia</h1>
+    <label for="hora">Que horas são? <input type="number" name="hora" id="hora"> <button>Cumprimentar</button></label>
+    <p></p>
+    <script>
+        const valor = document.querySelector("#hora");
+        const para = document.querySelector("p");
+        const btn = document.querySelector("button");
+
+        btn.addEventListener("click", () => {
+            let horas = Number(valor.value);
+
+            if (valor.value ===""){
+                para.textContent = "Por favor, digite um valor!";
+            } else if (horas <6){
+                para.textContent = "Boa madrugada!"
+            } else if (horas >=6 && horas <12){
+                para.textContent = "Bom dia!"
+            } else if (horas >=12 && horas <18){
+                para.textContent = "Boa tarde!"
+            } else if (horas >=18 && horas <= 24){
+                para.textContent = "Boa noite!"
+            } else {
+                para.textContent = " Horário inválido!"
+            }
+        })
+    </script>
+</body>
+</html>

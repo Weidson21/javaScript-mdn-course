@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2.2</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div{
+            padding: 15px;
+            margin: 10px;
+            background: #f2f2f2;
+            border-radius: 10px;
+            width: 250px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>Produtos</h2>
+    <div></div>
+    <script>
+        // Puxando a div
+        const ancoragem = document.querySelector("div");
+        // criando o array
+        const produtos = [{nome: "Televisão", preco: 2500},
+            {nome: "Celular", preco: 1699},
+            {nome: "Som JBL", preco: 789}
+        ];
+
+        // Criando o loop
+
+        for(let i = 0; i < produtos.length; i++){
+            // criacão da card dentro da div
+            const cartao = document.createElement("ancoragem");
+            cartao.classList.add("cartao");
+
+             const titulo = document.createElement("h3");
+             titulo.innerHTML = produtos[i].nome;
+
+             const preco = document.createElement("p");
+             preco.innerHTML = `Preço: R$${produtos[i].preco}`;
+
+             cartao.appendChild(titulo);
+             cartao.appendChild(preco);
+             ancoragem.appendChild(cartao);
+        }
+    </script>
+</body>
+</html>

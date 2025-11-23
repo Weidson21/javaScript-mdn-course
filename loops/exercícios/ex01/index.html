@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 01</title>
+</head>
+<body>
+    <h1>Gerador de itens</h1>
+    <ul>
+    </ul>
+    <button>Gerar</button>
+    <p></p>
+    <script>
+        var btn = document.querySelector("button");
+        var para = document.querySelector("p");
+        const lista = document.querySelector("ul");
+        btn.addEventListener("click", () =>{
+
+            var names = ["Maria", "João", "Pedro", "Weidson", "Moises"]
+
+            for(let i = 0; i <names.length; i++){
+               const item = document.createElement("li");
+                item.textContent = names[i];
+                lista.appendChild(item);
+            }
+        })
+    </script>
+</body>
+</html>

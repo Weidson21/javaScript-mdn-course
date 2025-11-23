@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex01</title>
+</head>
+<body>
+    <h1>Verificador de maioridade</h1>
+    <label for="idade">Digite a idade: <input type="number" name="idade" id="idade"> <button>Verificar</button></label>
+    <p></p>
+    <script>
+        // Verificador de maioridade
+        const valor = document.querySelector("#idade");
+        const para = document.querySelector("p");
+        const btn = document.querySelector("button");
+
+        btn.addEventListener("click", () => {
+            let idade = Number(valor.value);
+
+            if (valor.value === ""){
+                para.textContent = "Por favor, diigite um valor!"
+            } else if (idade >= 18){
+                para.textContent = `A pessoa que tem ${idade} anos de idade é maior de idade`;
+            } else {
+                para.textContent = `A pessoa que tem ${idade} anos de idade é menor de idade!`;
+            }
+        })
+    </script>
+</body>
+</html>

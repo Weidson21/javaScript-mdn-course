@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05</title>
+</head>
+<body>
+    <h1>Calculador de descontos</h1>
+    <label for="preco">Preço: <input type="number" name="preco" id="preco"></label>
+    <p><label for="desconto">Desconto: <input type="text" name="desconto" id="desconto"></label></p>
+    <button>Preço a pagar</button>
+    <p id="paragrafo"></p>
+    <script>
+        // Verificando descontos 
+
+        const valor = document.querySelector("#preco");
+        const valor1 = document.querySelector("#desconto");
+        const para = document.querySelector("#paragrafo");
+        const btn = document.querySelector("button");
+
+        btn.addEventListener("click", () => {
+            let preco = Number(valor.value);
+
+            if(valor.value ===""){
+                para.textContent = "Digite um preço!"
+            } else if (valor1.value === "DESCONTO10"){
+                para.textContent = `Com o desconto 10% do cupom, você paga R$${preco - (preco * 0.10).toFixed(2)}`
+            } else {
+                para.textContent = `Sem o cupom de desconto. Você para o preço de R$${preco} normalmente`
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02</title>
+</head>
+<body>
+    <h1>Gerador de itens: example 1.2</h1>
+    <ul></ul>
+    <button>Gerar</button>
+    <script>
+        const lista = document.querySelector("ul");
+        const btn = document.querySelector("button");
+
+        let frutas = ["Maça", "Goiaba", "Banana", "Pera", "Uva"];
+        btn.addEventListener("click", () =>{
+
+        let i = 0
+        while(i < frutas.length){
+            const item = document.createElement("li");
+            item.textContent = frutas[i];
+            lista.appendChild(item);
+            i++
+        }
+     })
+    </script>
+</body>
+</html>

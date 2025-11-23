@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex03</title>
+</head>
+<body>
+    <h1>Gerador de lista: example 1.3</h1>
+    <ul></ul>
+    <button>Gerar</button>
+    <script>
+        const lista = document.querySelector("ul");
+        const btn = document.querySelector("button");
+
+        btn.addEventListener("click", function(){
+            let animais = ["Cachorro", "Gato", "Passáro"]
+
+            for(let i = 0; i < animais.length; i++){
+                const item = document.createElement("li");
+                item.textContent = animais[i];
+                lista.appendChild(item);
+            }
+        })
+    </script>
+</body>
+</html> 

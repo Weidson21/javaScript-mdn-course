@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex3.1</title>
+    <style>
+         div{
+            padding: 20px;
+            color: white;
+            margin: 10px;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+
+        .bg1{ background: #1e3a9aaa;}
+        .bg2{ background: #047834;}
+    </style>
+</head>
+<body>
+    <h1>Caixas numeradas</h1>
+    <div></div>
+    <script>
+        const div = document.querySelector("div");
+
+        for(let i = 1; i <=10; i++){
+
+            const card = document.createElement("div");
+            card.classList.add("card");
+            if (i % 2 === 0)
+            card.classList.add("bg1");
+            else if(i % 2 === 1)
+            card.classList.add("bg2");
+
+            card.textContent = `Card ${i}`
+
+            div.append(card);
+        }
+
+    </script>
+</body>
+</html>

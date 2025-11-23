@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2.1</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div{
+            padding: 15px;
+            margin: 10px;
+            background: #f2f2f2;
+            border-radius: 10px;
+            width: 250px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>Prodtuos</h2>
+    <div></div>
+    <script>
+        const ancoragem = document.querySelector("div")
+
+        const frutas = [{nome: "Maça", preco : 3.5},
+            {nome: "Pera", preco: 3},
+            {nome: "Banana", preco: 5}
+        ]
+
+        let i = 0
+        while(i < frutas.length){
+            const cartao = document.createElement("ancoragem");
+            cartao.classList.add("cartao")
+
+            const titulo = document.createElement("h3");
+            titulo.textContent = frutas[i].nome;
+
+            const preco = document.createElement("p");
+            preco.textContent = `Preço: R$${frutas[i].preco}`;
+
+            cartao.appendChild(titulo);
+            cartao.appendChild(preco);
+            ancoragem.appendChild(cartao);
+            i++
+        }
+    </script>
+</body>
+</html>

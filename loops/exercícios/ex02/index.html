@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div{
+            padding: 15px;
+            margin: 10px;
+            background: #f2f2f2;
+            border-radius: 10px;
+            width: 250px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>Produtos</h2>
+    <div></div>
+    <script>
+        const produtos = [
+            { nome: "Notebook", preco: 3500},
+            { nome: "Mouse", preco: 80},
+            { nome: "Teclado", preco: 120}
+        ];
+
+        const div = document.querySelector("div");
+
+        for(let i = 0; i < produtos.length; i++){
+
+            const card = document.createElement("div");
+            card.classList.add("card");
+
+            const titulo = document.createElement("h3");
+            titulo.textContent = produtos[i].nome;
+
+            const preco = document.createElement("p");
+            preco.textContent = `Preço: R$ ${produtos[i].preco}`;
+
+            card.appendChild(titulo);
+            card.appendChild(preco);
+
+            div.appendChild(card);
+        }
+    </script>
+</body>
+</html>

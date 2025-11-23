@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex07</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        div{
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            margin: auto;
+            box-sizing: border-box;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 5px;
+
+        }
+        p, h1{
+            text-align: center;
+        }
+        p#paragrafo{
+            color: red;
+            text-shadow: 1px 1px 1px black;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Estação do ano</h1>
+        <p>
+            <label for="hemisferio">Hemisfério: <select name="hemisferio" id="hemisferio">
+                <option value="">--Selecione o hemisfério!--</option>
+                <option value="norte">Norte</option>
+                <option value="sul">Sul</option>
+            </select></label>
+        </p>
+        <p>
+            <label for="mes">Mês: <select name="mes" id="mes">
+                <option value="">--Escolhe o mês!--</option>
+                <option value="janeiro">Janeiro</option>
+                <option value="fevereiro">Fevereiro</option>
+                <option value="marco">Março</option>
+                <option value="abril">Abril</option>
+                <option value="maio">Maio</option>
+                <option value="junho">Junho</option>
+                <option value="julho">Julho</option>
+                <option value="agosto">Agosto</option>
+                <option value="setembro">Setembro</option>
+                <option value="outubro">Outubro</option>
+                <option value="novembro">Novembro</option>
+                <option value="dezembro">Dezembro</option>
+            </select></label>
+        </p>
+        <p id="paragrafo"></p>
+    </div>
+    <script>
+        const select1 = document.querySelector("#hemisferio");
+        const select2 = document.querySelector("#mes");
+        const para = document.querySelector("#paragrafo");
+
+        select1.addEventListener("change", () =>{
+
+            select2.addEventListener("change", () => {
+
+                let hemisferio = select1.value;
+                let mes = select2.value;
+
+                if(hemisferio === "norte" && (mes === "janeiro" || mes === "fevereiro" ||mes === "dezembro")){
+                    para.textContent = "Estamos no inverno!";
+
+                } else if (hemisferio === "norte" && (mes === "junho" || mes === "julho" || mes === "agosto")){
+                    para.textContent = "Estamos no outono!";
+
+                } else if (hemisferio === "norte" && (mes === "marco" || mes === "abril" || mes === "maio")){
+                    para.textContent = "Estamos na primavera!";
+
+                } else if (hemisferio === "norte" && (mes === "setembro" || mes === "outubro" || mes === "novembro")){
+                    para.textContent = "Estamos no verão!";
+                }
+
+
+                else if(hemisferio === "sul" && (mes === "janeiro" || mes === "fevereiro" ||mes === "dezembro")){
+                    para.textContent = "Estamos no verão!";
+                } else if (hemisferio === "sul" && (mes === "junho" || mes === "julho" || mes === "agosto")){
+                    para.textContent = "Estamos na primavera!";
+
+                } else if (hemisferio === "sul" && (mes === "marco" || mes === "abril" || mes === "maio")) {
+                    para.textContent = "Estamos no outono!";
+
+                } else if (hemisferio === "sul" && (mes === "setembro" || mes === "outubro" || mes === "novembro")){
+                    para.textContent = "Estamos no inverno!";
+                }
+
+            })
+        })
+    </script>
+</body>
+</html>

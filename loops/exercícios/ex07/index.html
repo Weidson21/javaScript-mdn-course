@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex07</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        table{
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        td, th{
+            border: 1px solid #aaa;
+            padding: 8px 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Criando uma tabela a partir de dados</h1>
+    <button>Gerar tabela</button>
+    <div></div>
+    <script>
+        // Puxando as funções
+        const container = document.querySelector("div");
+        const btn = document.querySelector("button");
+        const table = document.createElement("table");
+        // Criando uma array
+        const lista = [{nome: "Weidson", idade: 20},
+            {nome: "Luciene", idade: 44},
+            {nome: "Julia", idade: 15}
+        ];
+        // criar cabeçalho
+
+        const header = document.createElement("tr");
+
+        const thNome = document.createElement("th");
+        thNome.textContent = "Nome";
+
+        const thIdade = document.createElement("th");
+        thIdade.textContent = "Idade";
+
+        header.append(thNome, thIdade);
+        table.append(header);
+
+
+        btn.addEventListener("click", () =>{
+        // Criando o loop
+
+        for(let i = 0; i < lista.length; i++){
+            // Criando a table dinamicamente
+            const row = document.createElement("tr");
+
+            const tdNome = document.createElement("td");
+            tdNome.textContent = lista[i].nome;
+
+            const tdIdade = document.createElement("td");
+            tdIdade.textContent = lista[i].idade;
+
+            row.append(tdNome, tdIdade);
+            table.append(row);
+            container.append(table);
+
+        }
+
+        })
+    </script>
+</body>
+</html>

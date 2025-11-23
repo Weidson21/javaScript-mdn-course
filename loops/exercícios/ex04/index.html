@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04</title>
+</head>
+<body>
+    <h1>Repetição de frase</h1>
+    <label for="frase">Digite uma frase: <input type="text" name="frase" id="frase"> <button>Gerar</button></label>
+    <div></div>
+    <script>
+        const valor = document.querySelector("#frase");
+        const btn = document.querySelector("button");
+        const resultado = document.querySelector("div");
+
+        btn.addEventListener("click", () => {
+
+        
+        for(let i = 1; i <= 5; i++){
+
+            const para = document.createElement("p");
+            para.textContent = `${valor.value}`;
+
+            resultado.append(para);
+        }
+     })
+    </script>
+</body>
+</html>

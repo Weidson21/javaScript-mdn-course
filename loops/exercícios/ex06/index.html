@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div{
+           box-sizing: border-box;
+           background-color: lightgray;
+           width: 300px;
+           height: 300px;
+           margin: 10px auto; 
+           border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Criando botões dinamicamente</h1>
+    <button>Gerar botões</button>
+    <div></div>
+    <script>
+        // Chamando as funcionalidades
+        const container = document.querySelector("div");
+        const btn = document.querySelector("button");
+
+        btn.addEventListener("click", () => {
+            // Criando os botões e loop
+
+            let i = 1;
+            while(i <= 15){
+            const card = document.createElement("container");
+            card.classList.add("card");
+
+            const botoes = document.createElement("button");
+            botoes.classList.add("botoes");
+            botoes.innerHTML = `Botão ${i}`;
+            botoes.style.margin = "10px";
+            botoes.style.padding = "10px";
+            botoes.style.background = "lightblue";
+            botoes.style.border = "1px solid black";
+
+            card.append(botoes);
+            container.append(card);
+            i++
+            }
+        })
+    </script>
+</body>
+</html>
